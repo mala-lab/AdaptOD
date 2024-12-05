@@ -18,10 +18,6 @@ For [ImageNet-LT](https://liuziwei7.github.io/projects/LongTail.html), please do
 
 All datasets follow [PASCL](https://github.com/amazon-science/long-tailed-ood-detection) and [COCL](https://github.com/mala-lab/COCL)
 
-### Pretrained model
-
-please save in `./pretrain`
-
 ## Training
 
 ### CIFAR10-LT: 
