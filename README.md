@@ -1,20 +1,20 @@
-# Long-Tailed Out-of-Distribution Detection via Normalized Outlier Distribution Adaptation (AdaptOD)
+## Long-Tailed Out-of-Distribution Detection via Normalized Outlier Distribution Adaptation
 
-This is the official implementation of the [Long-Tailed Out-of-Distribution Detection via Normalized Outlier Distribution Adaptation]() NeurIPS2024
+This is the official implementation of the [Long-Tailed Out-of-Distribution Detection via Normalized Outlier Distribution Adaptation](https://arxiv.org/abs/2410.20807) (NeurIPS2024)
 
 ## Dataset Preparation
 
 ### In-distribution dataset
 
-Please download [CIFAR10](), [CIFAR100](), and [ImageNet-LT](https://liuziwei7.github.io/projects/LongTail.html) , place them  in`./datasets` 
+Please download CIFAR10, CIFAR100, and [ImageNet-LT](https://liuziwei7.github.io/projects/LongTail.html) , place them  in`./dataset` 
 
 ### Auxiliary/Out-of-distribution dataset
 
-For [CIFAR10-LT]() and [CIFAR100-LT](), please download [TinyImages 300K Random Images]() for auxiliary in `./datasets` 
+For CIFAR10 and CIFAR100, please download [TinyImages 300K Random Images]() for auxiliary in `./dataset` 
 
-For [CIFAR10-LT]() and [CIFAR100-LT](), please download [SC-OOD](https://jingkang50.github.io/projects/scood) benchmark  for out-of-distribution in `./datasets` 
+For CIFAR10 and CIFAR100, please download [SC-OOD](https://jingkang50.github.io/projects/scood) benchmark  for out-of-distribution in `./dataset` 
 
-For [ImageNet-LT](https://liuziwei7.github.io/projects/LongTail.html), please download [ImageNet10k_eccv2010](https://image-net.org/data/imagenet10k_eccv2010.tar) benchmark for auxiliary and out-of-distribution in `./datasets` 
+For [ImageNet-LT](https://liuziwei7.github.io/projects/LongTail.html), please download [ImageNet10k_eccv2010](https://image-net.org/data/imagenet10k_eccv2010.tar) benchmark for auxiliary and out-of-distribution in `./dataset` 
 
 All datasets follow [PASCL](https://github.com/amazon-science/long-tailed-ood-detection) and [COCL](https://github.com/mala-lab/COCL)
 
@@ -36,12 +36,6 @@ python train.py --gpu 0 --ds cifar10 --drp <where_you_store_all_your_datasets> -
 python train.py --gpu 0 --ds cifar100 --drp <where_you_store_all_your_datasets> --srp <where_to_save_the_ckpt>
 ```
 
-### ImageNet-LT:
-
-```
-python stage1.py --gpu 0,1,2,3 --ds imagenet --md ResNet50 --lr 0.01 --wd 5e-3  --drp <where_you_store_all_your_datasets> --srp <where_to_save_the_ckpt>
-```
-
 ## Testing
 
 ### CIFAR10-LT:
@@ -54,12 +48,6 @@ python test.py --gpu 0 --ds cifar10 --drp <where_you_store_all_your_datasets> --
 
 ```
 python test.py --gpu 0 --ds cifar100 --drp <where_you_store_all_your_datasets> --ckpt_path <where_you_save_the_ckpt>
-```
-
-### ImageNet-LT:
-
-```
-python test_imagenet.py --gpu 0  --drp <where_you_store_all_your_datasets> --ckpt_path <where_you_save_the_ckpt>
 ```
 
 
